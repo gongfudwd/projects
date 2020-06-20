@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,hight=device-hight,minimum-scale=1.0,maximum-scale=1.0,ser-scalable=none"/>
+
+    <title>天空中的功夫-博客</title>
+    <link rel="stylesheet" type="text/css" href="link/css/bootstrap.css">
+    <link href="https://cdn.bootcdn.net/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="link/css/MyBlog.css">
+
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <link href="css/weather.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="link/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="link/js/jquery.min.js"></script>
+    <script type="text/javascript" src="link/js/bootstrap.js"></script>
+    <script type="text/javascript" src="link/js/comment.js"></script>
+    <script type="text/javascript" src="link/js/blog.js"></script>
+    <script src="link/js/jquery.qqFace.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js"></script>
+    <style>
+
+        .jconfirm .jconfirm-box.jconfirm-animation-news {
+            /*the animation name is bob*/
+            transform: rotate(400deg) scale(0);
+        }
+
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        a:visited{
+            text-decoration: none;
+            color: white;
+        }
+        a:active{
+            text-decoration: none;
+            color: white;
+        }
+        a:hover{
+             text-decoration: none;
+             color: white;
+         }
+        a:focus{
+            text-decoration: none;
+            outline-style: none;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            background-image: url('link/images/blackground.jpg');
+            background-repeat: no-repeat;
+            background-size:  cover ,100vw;
+            background-position: center top;
+            background-attachment: fixed;
+        }
+
+    </style>
+    <script>
+        $(document).ready(function() {
+
+            if (checkUser()===null){
+                $("#header1").css("display","");
+                $("#header2").html("");
+                $("#hint").html("登录");
+            }else {
+                $("#header1").css("display","none");
+                var url=getUserPicture();
+                var html="<a  href='javascript:exit();'><img id='header3' usemap='#map2' style='border-radius: 50%;overflow: hidden;' src="+url+"></a>";
+                $("#header2").html(html);
+                $("#hint").html("退出");
+            }
+            $("#header1").hover(function(){
+                $("#hint").css("display","");
+            },function(){
+                $("#hint").css("display","none");
+            });
+            $("#header3").hover(function(){
+                $("#hint").css("display","");
+            },function(){
+                $("#hint").css("display","none");
+            });
+
+            visits();
+        });
+    </script>
+</head>
+<body  id="body" onLoad="init()" >
+<div class="weather rain" style="height: 100%;width: 100%;position: fixed;top: 0"></div>
+<div  class="container" style="height: auto;position: relative;" >
+    <div class="blog">
+        <div class="row">
+            <div class="col-md-9 col-xs-9 col-lg-9">
+                <div class="blog-information">
+                    <h4><span style="color: #0b97c4">【原创】</span><span> <a href="#">NET Spire.Doc组件</a></span></h4>
+                    <div style="position: relative;top: 20px;left:20px;width:calc(100% - 120px);border-bottom: gainsboro 1px solid"></div>
+                    <div class="blog-information-img"><a href="#"><img src="link/images/blackground.jpg" height="100%" width="100%"></a></div>
+                    <div class="blog-information-value">NPOI是指构建在POI 3.x版本之上的一个程序，NPOI可以在没有安装Office的情况下对Word或Excel文档进行读写操作。 NPOI是一个开源的C#读写Excel、WORD等微软OLE2组件文档的项目。</div>
+                    <div class="blog-information-little-title"><a href="#"><strong>继续阅读</strong></a></div>
+                    <div style="border-bottom:gainsboro 2px solid;position: absolute;top: 300px;width:calc(100% - 110px) ;left: 90px"></div>
+                    <div class="blog-information-sign"><span class="glyphicon glyphicon-tags" style="color: black;background-color:white">&nbsp;</span><span class="text-capitalize" >bootstrap.confirm.prism</span></div>
+                    <div class="blog-information-date"><p style="color: #8cd247;font-size: 24px" align="center">24</p><div style="position: relative;top: -10px;font-size: 16px">4月 2018</div></div>
+                    <div class="blog-information-number" align="right"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span>450</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-comment"></span>&nbsp;<span>15</span></div>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-3" >
+                <div class="blog-nav">
+                    <div class="blog-nav-search" align="center" >
+                            <input type="text" placeholder="请输入要搜索的内容" autocomplete="off" id="search-input"><button class="search"><span class="glyphicon glyphicon-search"></span></button>
+                    </div>
+                    <div style="height: 20px"></div>
+                    <a href="#"><div  class="blog-nav-option">全部文章</div></a>
+                    <a href="#"><div  class="blog-nav-option">HTML/CSS</div></a>
+                    <a href="#"><div  class="blog-nav-option">PHP</div></a>
+                    <a href="#"><div  class="blog-nav-option">JavaScript</div></a>
+                    <div style="height: 20px"></div>
+                </div>
+                <div class="blog-hot">
+                    <p class="blog-hot-title">热门文章</p>
+                    <div style="position: relative;top: 10px;left: 15px;border-bottom: 1px darkgrey solid;width: calc(100% - 30px)"></div>
+                    <ul class="list-unstyled" >
+                        <li><div class="blog-hot-li-1">1</div><span><a href="#">模板分享</a></span></li>
+                        <li><div class="blog-hot-li-2">2</div><span><a href="#">模板分享</a></span></li>
+                        <li><div class="blog-hot-li-3">3</div><span><a href="#">模板分享</a></span></li>
+                        <li><div class="blog-hot-li-4">4</div><span><a href="#">模板分享</a></span></li>
+                        <li><div class="blog-hot-li-4">5</div><span><a href="#">模板分享</a></span></li>
+                        <li><div class="blog-hot-li-4">6</div><span><a href="#">模板分享</a></span></li>
+                        <li><div class="blog-hot-li-4">7</div><span><a href="#">模板分享</a></span></li>
+                    </ul>
+                </div>
+                <div class="blog-visit">
+                    <p class="blog-hot-title">最新访客</p>
+                    <div style="position: relative;top: 10px;left: 15px;border-bottom: 1px darkgrey solid;width: calc(100% - 30px)"></div>
+                    <div class="blog-visit-table">
+                    <div class="row" id="visit">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+<!-- 导航条*固定-->
+<div style="height: 80px;width:100%;background:lightgrey;position: fixed;top: 0">
+    <div class="container" style="height:auto;position: relative;">
+
+        <div class="row" style="height: 29px"></div>
+        <div class="row">
+            <div class="col-md-2 col-xs-2"></div>
+            <div class="col-md-8 col-xs-8 " align="left" >
+                <ul class="tilte list-inline list-unstyled " >
+                    <li id="index"><span class="glyphicon glyphicon-home"></span>&nbsp;<a  href="index.html">首页</a>&nbsp;&nbsp;&nbsp;&nbsp;</br>&nbsp;</li>
+                    <li id="blog"><span class="glyphicon glyphicon-book"></span>&nbsp;<a  href="#">博客</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</br>&nbsp;</li>
+                    <li id="comment"><span class="glyphicon glyphicon-pencil"></span>&nbsp<a href="comment.html">留言</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</br>&nbsp;</li>
+                    <li id="diary"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;<a  href="diary.html">日记</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</br>&nbsp;</li>
+                    <li id="about"><span class="glyphicon glyphicon-star"></span>&nbsp;<a href="#">关于我</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</br>&nbsp;</li>
+                </ul>
+            </div>
+            <div class="col-md-2 col-xs-2" align="right" >
+                <a id="header1" href="javascript:blogHtml();"><img src="link/images/qq_48px_1158131_easyicon.net.png"></a>
+                <span id="header2"></span><div id="hint" align="center" style="background-color:black;color: whitesmoke;width: 50px;top:10px;position:relative;box-shadow: 0px 0px 15px 5px white;border-radius: 15%;display: none"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+<!-- 导航条*固定-->
+
+<nav class=" navbar-inverse" style="height: 160px;position: relative;top: 180px">
+    <div class="container">
+        <div class="row" style="height: 60px">
+            <div class="col-md-3 col-xs-2"></div>
+            <div class="col-md-3 col-xs-3"></br><p style="color: white;font-size: 18px">相关连接</p></div>
+            <div class="col-md-3 col-xs-3"></div>
+            <div class="col-md-3 col-xs-4"></br><p style="color: white;font-size: 18px">联系我</p></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-xs-2"></div>
+            <div class="col-md-3 col-xs-3">
+                <ul class="list-unstyled">
+                    <li><a href="#"><p><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;博文</p></a></li>
+                    <li><a href="#"><p><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;留言</p></a></li>
+                    <li><a href="#"><p><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;日记</p></a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-xs-3"> <ul class="list-unstyled">
+                <li><a href="#"><p><span class="glyphicon glyphicon-star"></span>&nbsp;&nbsp;关于我</p></a></li>
+                <li><a href="mailto:gongfudwd@gmail.com"><p><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;和我联系</p></a></li>
+            </ul>
+            </div>
+
+            <div class="col-md-3 col-xs-4">
+                <ul class="list-unstyled" style="color: white">
+                    <li><p><span class="glyphicon glyphicon-cloud"></span>&nbsp;&nbsp;上海市闵行区</p></li>
+                    <li><p><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;邮箱 2444724897@qq.com</p></li>
+                    <li><p><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;qq 2444724897</p></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="text-center" style="background: #0b0e07;color: white;top: 180px;position: relative">ZZW ©2019-2020 | 沪ICP备20001813号</div>
+</body>
+</html>

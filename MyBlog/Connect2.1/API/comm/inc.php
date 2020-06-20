@@ -1,0 +1,2 @@
+<?php die('forbidden'); ?>
+{"appid":"101878572","appkey":"475dca45e9d128ab00c3a6e386def90c","callback":"http://www.gongfudwd.top/connect.php","scope":"get_user_info","errorReport":true,"storageType":"file","host":"localhost","user":"root","password":"root","database":"test"}

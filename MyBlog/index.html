@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>天空中的功夫-欢迎来到我的博客</title>
+    <link rel="stylesheet" type="text/css" href="link/css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="link/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="link/css/MyBlog.css">
+    <script type="text/javascript" src="link/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="link/js/jquery-ui.js"></script>
+    <script type="text/javascript" src="link/js/bootstrap.js"></script>
+    <script type="text/javascript" src="link/js/index.js"></script>
+    <style>
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        a:hover{
+            text-decoration: none;
+            color: white;
+        }
+        a:active{
+            text-decoration: none;
+            color: white;
+        }
+        a:visited{
+            text-decoration: none;
+            color: white;
+        }
+        a:focus{
+            outline-style: none;
+        }
+
+    </style>
+    <script>
+        $(window).resize(function () {
+            $("#background1").css("width","100%");
+            $("#background1").css("height",$(window).height());
+            $("#shadow").css("width","100%");
+            $("#shadow").css("height",$(window).height());
+    })
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                var scrollTop = $(window).scrollTop();
+                var paralasicValue = $('#background1').attr('data-paralasic');
+                $('#background1').css('background-position', 'center top ' + scrollTop * paralasicValue + 'px'); /* 1.8 - default value. Increase less to go stopping the effect */
+                $('#background2').css('background-position', 'center top ' + scrollTop * paralasicValue + 'px'); /* 1.8 - default value. Increase less to go stopping the effect */
+            });
+            let width=$(window).width();
+            let height=$(window).height();
+            $("#shadow").css("width","100%");
+            $("#shadow").css("height",height);
+            $("#background1").css("width","100%");
+            $("#background1").css("height",height);
+            activeIn();
+            shadow();
+            activeBtn1();
+            activeBtn2();
+            space();
+        })
+        function space() {
+            $("#space").animate({top:"-500px"},5000);
+        }
+        $(window).bind('scroll', function () {
+            $(window).scroll(function() {
+                var scrollTop = $(window).scrollTop();
+                var paralasicValue = $('#background1').attr('data-paralasic');
+                $('#background1').css('background-position', 'center top ' + scrollTop * paralasicValue + 'px'); /* 1.8 - default value. Increase less to go stopping the effect */
+                $('#background2').css('background-position', 'center top ' + scrollTop * paralasicValue + 'px'); /* 1.8 - default value. Increase less to go stopping the effect */
+            });
+        });
+    </script>
+</head>
+<body>
+    <div style="position: relative;overflow: hidden" id="background1" data-paralasic="0.5" align="center">
+    <div id="shadow"></div>
+
+    <div id="activeIn" class="text-center activeIn">
+        <p>welcome 欢迎</p>
+        <p>一起来探索我的博客吧 </p>
+        <footer style="color: lightgrey">Hello Word</footer>
+    </div>
+
+        <h2 style="color: #0b97c4;position: absolute;top:45%;left: calc(50% - 103px)">让我们星辰大海</h2>
+        <img src="link/images/cz-5.png" height="500px" id="space" class="space">
+    </div>
+    <div style="height:auto;width: 100%" id="informationArea" class="text-center">
+        <div class="text-center" style="position: relative;top: -65px"><a href="javascript:move1();"><img src="link/images/more.png"></a></div>
+        <h1>热门文章</h1>
+        <p>&nbsp;</p>
+        <div class="center" style="border-bottom: #0b97c4 3px solid;width: 50px;"></div>
+        <p style="line-height: 22px;color: #888;margin-top: 20px">你不懂我，我不怪你。你永远看不到百我最伤心的时候，因为只有你度不在我身边，我<br>才最伤心。你也永远看不到我最忧愁的知样子，只有你不在我身边，我才最忧道愁。<br>我能做的只有放手，放手让回你去寻找你想要的.</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-xs-12">
+                    <ul class=" list-inline list-unstyled" >
+                        <li><br>
+                            <div class="hotImg"><img src="link/images/blackground.jpg" height="100%" width="100%"></div>
+                            <div align="left" class="hotImg2">
+                                <a href="#" class="hotImg2-a" >新增QQ音乐与网易云音乐搜索</a>
+                                <p style="position: relative;top: 5px">2019年12月28日</p>
+                                <p style="margin-top: 20px;height: 60px">2019年12月28日 给之前的文章配乐新增了网易云搜索接音乐。</p>
+                                <a href="#" class="readMore">阅读更多</a>
+                            </div>
+                        </li>
+                        <li><br>
+                            <div class="hotImg"><img src="link/images/blackground.jpg" height="100%" width="100%"></div>
+                            <div align="left" class="hotImg2">
+                                <a href="#" class="hotImg2-a">新增QQ音乐与网易云音乐搜索</a>
+                                <p style="position: relative;top: 5px">2019年12月28日</p>
+                                <p style="margin-top: 20px;height: 60px">2019年12月28日 给之前的文章配乐新增了网易云搜索接<br>口，现在支持QQ音乐与网易云音乐。</p>
+                                <a href="#" class="readMore">阅读更多</a>
+                            </div>
+                        </li>
+                        <li><br>
+                            <div class="hotImg"><img src="link/images/blackground.jpg" height="100%" width="100%"></div>
+                            <div align="left" class="hotImg2">
+                                <a href="#" class="hotImg2-a">新增QQ音乐与网易云音乐搜索</a>
+                                <p style="position: relative;top: 5px">2019年12月28日</p>
+                                <p style="margin-top: 20px;height: 60px">2019年12月28日 给之前的文章配乐新增了网易云搜索接<br>口，现在支持QQ音乐与网易云音乐。</p>
+                                <a href="#" class="readMore">阅读更多</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <br><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div id="shadow2"></div>
+    <div id="background2" data-paralasic="0.5">
+        <div align="center" style="position:relative;top: 140px">
+            <ul class="list-unstyled list-inline">
+                <li><a href="#" ><div id="actBtn1" class="activeBtn middleCenter">EnterBlog</div></a></li>
+                <li><a href="#" ><div id="actBtn2" class="activeBtn middleCenter">关于</div></a></li>
+            </ul>
+        </div>
+    </div>
+    <div style="height: 250px;" class="text-center">
+        </br></br></br>
+        <h3>天空中的功夫</h3>
+        <p style="font-size: 15px;"><strong>爱好</strong><mark>游戏</mark>，<mark>赛车</mark>，<mark>航天</mark>，<mark>撸起代码就会废寝忘食</mark>。</p>
+    </div>
+    <nav class=" navbar-inverse" style="height: 250px">
+        <div class="container">
+            <div class="row" style="height: 60px">
+                <div class="col-md-3 col-xs-2"></div>
+                <div class="col-md-3 col-xs-3"></br><p style="color: white;font-size: 18px">相关连接</p></div>
+                <div class="col-md-3 col-xs-3"></div>
+                <div class="col-md-3 col-xs-4"></br><p style="color: white;font-size: 18px">联系我</p></div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-xs-2"></div>
+                <div class="col-md-3 col-xs-3">
+                    <ul class="list-unstyled">
+                        <li><a href="#"><p><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;博文</p></a></li>
+                        <li><a href="comment.html"><p><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;留言</p></a></li>
+                        <li><a href="diary.html"><p><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;日记</p></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-xs-3"> <ul class="list-unstyled">
+                    <li><a href="#"><p><span class="glyphicon glyphicon-star"></span>&nbsp;&nbsp;关于我</p></a></li>
+                    <li><a href="mailto:gongfudwd@gmail.com"><p><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;和我联系</p></a></li>
+                </ul>
+                </div>
+
+                <div class="col-md-3 col-xs-4">
+                    <ul class="list-unstyled" style="color: white">
+                        <li><p><span class="glyphicon glyphicon-cloud"></span>&nbsp;&nbsp;上海市闵行区</p></li>
+                        <li><p><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;邮箱 2444724897@qq.com</p></li>
+                        <li><p><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;qq 2444724897</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+<div class="text-center" style="background: #0b0e07;color: white">ZZW ©2019-2020 | 沪ICP备20001813号</div>
+</body>
+</html>
